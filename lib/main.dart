@@ -1,4 +1,6 @@
 import 'package:absensi/features/attendance/pages/attendance_boarding_page.dart';
+import 'package:absensi/features/attendance/pages/attendance_page.dart';
+import 'package:absensi/features/attendance/pages/attendance_success_page.dart';
 import 'package:absensi/features/auth/pages/sign_in_page.dart';
 import 'package:absensi/utils/constants/route.dart';
 import 'package:flutter/material.dart';
@@ -29,8 +31,11 @@ class MainApp extends StatelessWidget {
       home: const SignInPage(),
       initialRoute: '/',
       routes: {
+        RouteName.signIn: (context) => const SignInPage(),
         RouteName.attendanceBoarding: (context) =>
             const AttendanceBoardingPage(),
+        RouteName.attendance: (context) => const AttendancePage(),
+        RouteName.attendanceSuccess: (context) => const AttendanceSuccessPage(),
       },
     );
   }

@@ -1,5 +1,6 @@
 import 'package:absensi/common/theme.dart';
 import 'package:absensi/features/auth/widgets/button_widget.dart';
+import 'package:absensi/utils/constants/route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -84,9 +85,19 @@ class AttendanceBoardingPage extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        ButtonWidget(title: 'Masuk', onPressed: () {}),
+                        ButtonWidget(
+                          title: 'Masuk',
+                          onPressed: () {
+                            Navigator.pushNamed(context, RouteName.attendance);
+                          },
+                        ),
                         const SizedBox(height: 18),
-                        ButtonWidget(title: 'Pulang', onPressed: () {}),
+                        ButtonWidget(
+                            title: 'Pulang',
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, RouteName.attendance);
+                            }),
                       ],
                     ),
                   ),
