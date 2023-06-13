@@ -1,3 +1,6 @@
+import 'package:absensi/features/attendance/pages/attendance_boarding_page.dart';
+import 'package:absensi/features/auth/pages/sign_in_page.dart';
+import 'package:absensi/utils/constants/route.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,12 +12,26 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        fontFamily: 'Poppins',
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            // minimumSize: const Size.fromHeight(50),
+            // rounded rectangle
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
         ),
       ),
+      home: const SignInPage(),
+      initialRoute: '/',
+      routes: {
+        RouteName.attendanceBoarding: (context) =>
+            const AttendanceBoardingPage(),
+      },
     );
   }
 }
